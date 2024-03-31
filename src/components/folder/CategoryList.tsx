@@ -1,6 +1,6 @@
 import '@/app/globals.css';
 
-const CategoryList = () => {
+export default function CategoryList() {
   return (
     <div className="flex justify-between items-center">
       <div className="flex flex-wrap gap-2">
@@ -10,5 +10,4 @@ const CategoryList = () => {
       <button className="text-primary font-medium whitespace-normal mobile:add-folder-btn">폴더 추가 +</button>
     </div>
   );
-};
-export default CategoryList;
+}

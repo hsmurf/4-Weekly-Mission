@@ -8,7 +8,7 @@ const sns = [
   { id: 4, link: 'https://www.instagram.com/', src: '/assets/icons/instagram.svg', alt: '인스타그램으로 이동' },
 ];
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="w-full h-40 pt-8 mt-24 bg-[#111322] mobile:mt-10">
       <div className="flex justify-between w-full max-w-[1920px] h-fit px-28 mobile:grid mobile:grid-cols-2 mobile:gap-y-14 mobile:items-center mobile:px-8">
@@ -27,5 +27,4 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-export default Footer;
+}

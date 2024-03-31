@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const Option = () => {
+export default function Option() {
   return (
     <div className="flex justify-between items-center">
       <h2 className="text-2xl font-semibold ">zz</h2>
@@ -21,5 +21,4 @@ const Option = () => {
       </div>
     </div>
   );
-};
-export default Option;
+}

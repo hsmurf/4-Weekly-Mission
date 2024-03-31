@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const Header = () => {
+export default function Header() {
   return (
     <header className=" bg-blue-50 z-10">
       <nav className="flex justify-between items-center w-full max-w-[1920px] h-24 px-52 tablat:px-8">
@@ -15,5 +15,4 @@ const Header = () => {
       </nav>
     </header>
   );
-};
-export default Header;
+}

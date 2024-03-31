@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import '@/app/globals.css';
-const AddLinkInput = () => {
+export default function AddLinkInput() {
   return (
     <section className=" pt-16 pb-24 bg-[#edf7ff] tablat:px-8">
       <form className="flex justify-center items-center max-w-[800px] mx-auto py-4 px-5 bg-white border-purple  rounded-2xl">
@@ -16,5 +16,4 @@ const AddLinkInput = () => {
       </form>
     </section>
   );
-};
-export default AddLinkInput;
+}
