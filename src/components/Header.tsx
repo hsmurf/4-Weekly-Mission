@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Header = () => {
   return (
     <header className=" bg-blue-50 z-10">
-      <nav className="flex justify-between items-center w-full max-w-[1920px] h-24 px-52 md:px-8">
+      <nav className="flex justify-between items-center w-full max-w-[1920px] h-24 px-52 tablat:px-8">
         <Link href={'/'}>
           <Image src="/assets/icons/logo.svg" width={100} height={100} alt="로고" />
         </Link>

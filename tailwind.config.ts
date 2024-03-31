@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        md: { max: '1199px' },
+        mobile: { max: '767px' },
+        tablat: { max: '1199px' },
       },
     },
   },
