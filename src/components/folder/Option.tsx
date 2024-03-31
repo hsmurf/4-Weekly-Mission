@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-const CurrentTitle = () => {
+const Option = () => {
   return (
     <div className="flex justify-between items-center">
-      <p className="text-2xl font-semibold ">zz</p>
+      <h2 className="text-2xl font-semibold ">zz</h2>
 
       <div className="flex justify-center items-center gap-3">
         <button className="flex justify-center items-center gap-1">
@@ -22,4 +22,4 @@ const CurrentTitle = () => {
     </div>
   );
 };
-export default CurrentTitle;
+export default Option;
