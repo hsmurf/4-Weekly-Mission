@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: '#6d6afe',
+        red: '#FF5B56',
+      },
       screens: {
         mobile: { max: '767px' },
         tablat: { max: '1199px' },
