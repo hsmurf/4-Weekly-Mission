@@ -5,6 +5,9 @@
   html {
     font-family: 'Pretendard', system-ui, sans-serif;
   }
+  input:focus {
+    outline: none;
+  }
 }
 @layer components {
   .btn {
@@ -34,5 +37,13 @@
     background: theme('colors.primary');
     z-index: 11;
     color: #fff;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1060px;
+    margin: 40px auto 0;
   }
 }

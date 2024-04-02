@@ -13,8 +13,8 @@ const config: Config = {
         red: '#FF5B56',
       },
       screens: {
+        tablet: { max: '1199px' },
         mobile: { max: '767px' },
-        tablat: { max: '1199px' },
       },
     },
   },
