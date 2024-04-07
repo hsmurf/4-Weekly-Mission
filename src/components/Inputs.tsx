@@ -39,3 +39,21 @@ export function PasswordInput({ register, errors }: any) {
     </div>
   );
 }
+
+export function PasswordCheckInput({ register, errors, passwordValue }: any) {
+  return (
+    <div className="flex flex-col justify-center items-start gap-3">
+      <label htmlFor="">비밀번호</label>
+      <input
+        className="input w-full"
+        type="password"
+        placeholder="영문,숫자를 조합해 8자 이상 입력해 주세요"
+        {...register('passwordCheck', {
+          required: true,
+          validate: (value: any) => value === passwordValue || '비밀번호가 일치하지 않아요.',
+        })}
+      />
+      {<p className="text-sm text-red">{errors?.passwordCheck?.message}</p>}
+    </div>
+  );
+}
