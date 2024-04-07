@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import SearchBar from '@/components/SearchBar';
 import AddLinkInput from '@/components/folder/AddLinkInput';
 import CategoryList from '@/components/folder/CategoryList';
@@ -22,6 +22,7 @@ export default function Page() {
   const [folderId, setFolderId] = useState<number>();
   const [modalFolderName, setModalFolderName] = useState<string>('전체');
   const [modalType, setModalType] = useState<string | null>(null);
+  const [searchValue, setSearchValue] = useState<string>('');
 
   useEffect(() => {
     getCategoryList().then(({ data }) => setCategoryList(data));
@@ -34,6 +35,14 @@ export default function Page() {
     };
     fetchData();
   }, [title, folderId]);
+
+  const searchFolder = userFolder.filter((card) => {
+    return (
+      card.url.toLowerCase().includes(searchValue.toLowerCase()) ||
+      card.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      card.description.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  });
 
   const openModal = (modalType: string) => {
     setModalType(modalType);
@@ -66,11 +75,11 @@ export default function Page() {
 
   return (
     <>
-      <section className=" pt-16 pb-24 bg-[#edf7ff] tablet:px-8">
+      <section className="pt-16 pb-24 bg-[#edf7ff] tablet:px-8">
         <AddLinkInput openModal={openModal} setModalFolderName={setModalFolderName} />
       </section>
       <section className="content-container tablet:px-8 tablet:justify-center">
-        <SearchBar />
+        <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
         <div className="flex flex-col gap-6">
           <CategoryList
             categoryList={categoryList}
@@ -83,7 +92,7 @@ export default function Page() {
           <Option title={title} openModal={openModal} setModalFolderName={setModalFolderName} />
           {userFolder && userFolder.length > 0 ? (
             <div className="grid grid-cols-3 gap-x-5 gap-y-6 transition-all tablet:grid-cols-2 tablet:justify-items-center mobile:grid-cols-1">
-              {userFolder.map((link) => (
+              {searchFolder.map((link) => (
                 <Card key={link.id} link={link} openModal={openModal} setModalFolderName={setModalFolderName} />
               ))}
             </div>
