@@ -15,7 +15,7 @@ export const getSampleFolder = async () => {
   try {
     const response = await fetch(`${BASE_URL}/sample/folder`);
     const data = await response.json();
-    return data;
+    return data.folder;
   } catch (error) {
     console.log('샘플 폴더 데이터를 불러오지 못 했습니다. 다시 시도해 주세요.', error);
     throw error;

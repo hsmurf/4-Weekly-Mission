@@ -1,3 +1,4 @@
+'use client';
 import { Linklist } from '@/app/shared/page';
 
 interface CardPopoverProps {

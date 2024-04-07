@@ -75,7 +75,7 @@ export default function Page() {
 
   return (
     <>
-      <section className=" pt-16 pb-24 bg-[#edf7ff] tablet:px-8">
+      <section className="pt-16 pb-24 bg-[#edf7ff] tablet:px-8">
         <AddLinkInput openModal={openModal} setModalFolderName={setModalFolderName} />
       </section>
       <section className="content-container tablet:px-8 tablet:justify-center">
