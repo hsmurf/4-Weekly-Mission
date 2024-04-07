@@ -1,8 +1,9 @@
+'use client';
 import { getSampleFolder } from '@/services/api';
 import Card from '@/components/Card';
 import SearchBar from '@/components/SearchBar';
 import FolderOwner from '@/components/shared/FolderOwner';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export interface Linklist {
   id: number;
@@ -28,11 +29,19 @@ export interface SampleFolder {
   links: Linklist[];
   count: number;
 }
-export default async function Page() {
-  const sampleFolder = await getSampleFolder();
+export default function Page() {
   const [searchValue, setSearchValue] = useState<string>('');
+  const [sampleFolder, setSampleFolder] = useState<SampleFolder>();
 
-  const searchFolder: SampleFolder = sampleFolder.links.filter((card: Linklist) => {
+  useEffect(() => {
+    const sampleData = async () => {
+      const sampleFolder = await getSampleFolder();
+      setSampleFolder(sampleFolder);
+    };
+    sampleData();
+  }, []);
+
+  const searchFolder = sampleFolder.links.filter((card: Linklist) => {
     return (
       card.url.toLowerCase().includes(searchValue.toLowerCase()) ||
       card.title.toLowerCase().includes(searchValue.toLowerCase()) ||

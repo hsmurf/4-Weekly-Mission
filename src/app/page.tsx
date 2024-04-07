@@ -9,6 +9,9 @@ export default function Home() {
       <Link href={'/folder'} className="btn w-[128px]">
         폴더 페이지
       </Link>
+      <Link href={'/signup'} className="btn w-fit">
+        회원가입 페이지
+      </Link>
     </div>
   );
 }
