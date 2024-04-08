@@ -6,7 +6,7 @@ export function EmailInput({ register, errors }: any) {
     <div className="flex flex-col justify-center items-start gap-3">
       <label htmlFor="">이메일</label>
       <input
-        className="input w-full"
+        className={`input w-full ${errors.email ? 'border-red' : ''} `}
         type="email"
         placeholder="이메일을 입력해 주세요"
         {...register('email', {
@@ -29,7 +29,7 @@ export function PasswordInput({ register, errors }: any) {
       <label htmlFor="">비밀번호</label>
       <div className="w-full relative">
         <input
-          className="input w-full"
+          className={`input w-full ${errors.password ? 'border-red' : ''}`}
           type={showPassword ? 'text' : 'password'}
           placeholder="영문,숫자를 조합해 8자 이상 입력해 주세요"
           {...register('password', {
@@ -63,7 +63,7 @@ export function PasswordCheckInput({ register, errors, passwordValue }: any) {
       <label htmlFor="">비밀번호</label>
       <div className="w-full relative">
         <input
-          className="input w-full"
+          className={`input w-full ${errors.passwordCheck ? 'border-red' : ''}`}
           type={showPassword ? 'text' : 'password'}
           placeholder="영문,숫자를 조합해 8자 이상 입력해 주세요"
           {...register('passwordCheck', {
