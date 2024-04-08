@@ -12,6 +12,9 @@ export default function Home() {
       <Link href={'/signup'} className="btn w-fit">
         회원가입 페이지
       </Link>
+      <Link href={'/signin'} className="btn w-fit">
+        로그인 페이지
+      </Link>
     </div>
   );
 }
