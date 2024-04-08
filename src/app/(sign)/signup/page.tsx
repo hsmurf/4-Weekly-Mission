@@ -23,14 +23,12 @@ export default function Page() {
   const router = useRouter();
 
   useEffect(() => {
-    // 페이지 접근시 로컬 스토리지에서 accessToken 확인
     const accessToken = localStorage.getItem('accessToken');
 
-    // 만약 accessToken이 존재한다면 "/folder" 페이지로 이동
     if (accessToken) {
       router.push('/folder');
     }
-  }, []); // 빈 배열을 전달하여 컴포넌트가 마운트될 때 한 번만 실행되도록 설정
+  }, []);
 
   const onSubmit = async (inputData: FormData, e: any) => {
     e.preventDefault();
