@@ -15,11 +15,11 @@ export default function Page() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<FormData>({ mode: 'onBlur' });
 
   const onSubmit = (data: any) => data;
   return (
-    <div className="flex flex-col gap-8 w-[400px]">
+    <div className="flex flex-col gap-8 w-full max-w-[400px]">
       <div className="flex justify-center items-center gap-2 mt-4">
         <p>회원이 아니신가요?</p>
         <Link className="text-primary font-semibold underline" href={'/signup'}>
